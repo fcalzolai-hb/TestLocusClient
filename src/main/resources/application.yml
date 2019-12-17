@@ -1,0 +1,5 @@
+spring.main.allow-bean-definition-overriding: true
+server.port: 8081
+app.path.prefix: /
+
+com.babylonhealth.locuscommons.locus.client.base-path: http://localhost:8080/v1

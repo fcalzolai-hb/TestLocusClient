@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        BAMS_SPRING_VERSION = '0.10.0'
+        SPRING_FOX_VERSION = '2.9.2'
+        LOMBOK_VERSION = '1.18.8'
+    }
+
+    apply from: 'repo.gradle'
+    repositories.addAll allRepos
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'java'
+    id 'io.franzbecker.gradle-lombok' version '3.1.0'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group 'org.babylon'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.8.8'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
+    implementation "io.springfox:springfox-swagger2:$SPRING_FOX_VERSION"
+    implementation "io.springfox:springfox-swagger-ui:$SPRING_FOX_VERSION"
+
+    implementation 'javax.validation:validation-api'
+
+    implementation 'com.babylonhealth.locus-commons:locus-commons-locus-client:0.1.0-local'
+
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
+
+    testCompile 'junit:junit'
+    testCompile 'org.springframework:spring-test'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
