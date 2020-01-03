@@ -40,7 +40,7 @@ dependencies {
 
     implementation 'javax.validation:validation-api'
 
-    implementation 'com.babylonhealth.locus-commons:locus-commons-locus-client:0.1.0-local'
+    implementation 'com.babylonhealth.locus-commons:locus-commons-locus-client:0.2.0-local'
 
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
 
